@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard - CertProctor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">CertProctor</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container dashboard">
+      <aside class="sidebar">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="exam-instruction.html">Exams</a></li>
+          <li><a href="certificate.html">Certificates</a></li>
+        </ul>
+      </aside>
+      <section class="main-content">
+        <h2>Welcome, Student</h2>
+        <div class="card">
+          <h3>Upcoming Exams</h3>
+          <table class="exam-list">
+            <thead>
+              <tr>
+                <th>Exam</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Python Basics</td>
+                <td>2023-10-15</td>
+                <td><span class="status">Scheduled</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Certificates</h3>
+          <p>You have 2 earned certificates.</p>
+          <a href="certificate.html" class="btn">View Certificates</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 CertProctor. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
