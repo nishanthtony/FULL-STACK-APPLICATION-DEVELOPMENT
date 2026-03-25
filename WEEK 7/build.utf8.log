@@ -1,0 +1,50 @@
+﻿[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] microservices-parent                                               [pom]
+[INFO] eureka-server                                                      [jar]
+[INFO] user-service                                                       [jar]
+[INFO] product-service                                                    [jar]
+[INFO] payment-service                                                    [jar]
+[INFO] order-service                                                      [jar]
+[INFO] 
+[INFO] ------------------< com.example:microservices-parent >------------------
+[INFO] Building microservices-parent 1.0.0-SNAPSHOT                       [1/6]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ microservices-parent ---
+[INFO] 
+[INFO] ---------------------< com.example:eureka-server >----------------------
+[INFO] Building eureka-server 0.0.1-SNAPSHOT                              [2/6]
+[INFO]   from eureka-server\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ eureka-server ---
+[INFO] Deleting C:\Users\rockg\OneDrive\Pictures\Desktop\WEEK 7\eureka-server\target
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] microservices-parent 1.0.0-SNAPSHOT ................ SUCCESS [  0.292 s]
+[INFO] eureka-server 0.0.1-SNAPSHOT ....................... FAILURE [  3.218 s]
+[INFO] user-service 0.0.1-SNAPSHOT ........................ SKIPPED
+[INFO] product-service 0.0.1-SNAPSHOT ..................... SKIPPED
+[INFO] payment-service 0.0.1-SNAPSHOT ..................... SKIPPED
+[INFO] order-service 0.0.1-SNAPSHOT ....................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.528 s
+[INFO] Finished at: 2026-03-24T23:25:30+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:3.5.0:clean (default-clean) on project eureka-server: Failed to clean project: Failed to delete C:\Users\rockg\OneDrive\Pictures\Desktop\WEEK 7\eureka-server\target\classes\META-INF\maven\com.example\eureka-server -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :eureka-server
