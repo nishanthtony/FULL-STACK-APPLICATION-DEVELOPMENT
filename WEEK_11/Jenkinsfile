@@ -1,0 +1,65 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven'
+    }
+
+    parameters {
+        choice(name: 'ENV', choices: ['DEV', 'QA', 'PROD'], description: 'Select Environment')
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out code'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+
+        stage('Package') {
+            steps {
+                bat 'mvn package'
+                bat 'mkdir output'
+                bat 'echo Build Success > output\\app.txt'
+                archiveArtifacts artifacts: 'output/*'
+            }
+        }
+
+        stage('Approval') {
+            when {
+                expression { params.ENV == 'PROD' }
+            }
+            steps {
+                input message: 'Approve Production Deployment?'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying to ${params.ENV}"
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build Successful'
+        }
+        failure {
+            echo 'Build Failed'
+        }
+    }
+}
